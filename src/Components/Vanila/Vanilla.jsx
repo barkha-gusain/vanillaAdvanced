@@ -2,7 +2,58 @@ import React from 'react'
 import '../Vanila/Vanilla.css'
 import { FaIceCream } from 'react-icons/fa';
 import { MdCake } from 'react-icons/md';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+gsap.registerPlugin(ScrollTrigger, useGSAP)
 const Vanilla = () => {
+ useGSAP(() => {
+    // Animate top text
+    gsap.from('.vanilla-left h2', {
+      scrollTrigger: {
+        trigger: '.vanilla-left h2',
+        start: 'top 90%',
+      },
+      opacity: 0,
+      x: -50,
+      duration: 1,
+    });
+
+    gsap.from('.vanilla-right p', {
+      scrollTrigger: {
+        trigger: '.vanilla-right p',
+        start: 'top 90%',
+      },
+      opacity: 0,
+      x: 50,
+      duration: 1,
+    });
+
+    // Divider animation
+    gsap.from('.menu-heading', {
+      scrollTrigger: {
+        trigger: '.menu-heading',
+        start: 'top 85%',
+      },
+      opacity: 0,
+      y: 30,
+      duration: 1,
+    });
+
+    // Animate menu columns
+    gsap.from('.menu-column', {
+      scrollTrigger: {
+        trigger: '.menu-container',
+        start: 'top 80%',
+      },
+      opacity: 0,
+      y: 50,
+      stagger: 0.3,
+      duration: 1,
+      ease: 'power2.out'
+    });
+  }, []);
+
   return (
     <>
            <div className="vanilla-container">

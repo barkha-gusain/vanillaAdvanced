@@ -1,6 +1,41 @@
 import React from 'react'
 import '../Res/Res.css'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useGSAP } from '@gsap/react'
+
+gsap.registerPlugin(ScrollTrigger,useGSAP)
 const Res = () => {
+useGSAP(() => {
+    // Animate left info block
+    gsap.from('.reservation-info', {
+      scrollTrigger: {
+        trigger: '.reservation-info',
+        start: 'top 80%',
+        toggleActions: 'play none none none',
+      },
+      opacity: 0,
+      x: -80,
+      duration: 1,
+      ease: 'power2.out',
+    });
+
+    // Animate right image
+    gsap.from('.reservation-image', {
+      scrollTrigger: {
+        trigger: '.reservation-image',
+        start: 'top 80%',
+        toggleActions: 'play none none none',
+      },
+      opacity: 0,
+      x: 80,
+      duration: 1,
+      ease: 'power2.out',
+      delay: 0.3,
+    });
+  }, []);
+
+
   return (
    <>
 <div className="reservation-container">

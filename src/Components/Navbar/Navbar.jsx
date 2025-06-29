@@ -1,5 +1,5 @@
 // Navbar.jsx
-import React, { useState } from 'react';
+import React, {  useState } from 'react';
 import './Navbar.css';
 import {
   FaHome,
@@ -10,12 +10,30 @@ import {
   FaTimes
 } from 'react-icons/fa';
 import { Link } from 'react-scroll';  // ✅ Use this now
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
+import { useGSAP } from '@gsap/react';
+gsap.registerPlugin(ScrollTrigger)
+
+
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
+
+useGSAP(() => {
+  const tl = gsap.timeline();
+
+  tl.from(".navbar-logo", { y: -50, opacity: 0, duration: 0.5, ease: "power2.out" })
+    .from(".navbar-links li", { y: -20, opacity: 0, stagger: 0.1, duration: 0.4 }, "-=0.3")
+    .from(".menu-icon", { y: -50, opacity: 0, duration: 0.4 }, "-=0.5");
+}, []);
+  
+ 
+
 
   return (
     <nav className="navbar">

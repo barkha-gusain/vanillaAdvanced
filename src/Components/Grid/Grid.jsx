@@ -1,7 +1,42 @@
 import React from 'react'
 import '../Grid/Grid.css'
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(ScrollTrigger, useGSAP)
 
 const Grid = () => {
+
+
+  useGSAP(() => {
+    gsap.from('.news-card', {
+      scrollTrigger: {
+        trigger: '.news-grid',
+        start: 'top 80%',
+        toggleActions: 'play none none none',
+      },
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      stagger: 0.2,
+      ease: 'power2.out'
+    });
+
+    gsap.from('.news-title', {
+      scrollTrigger: {
+        trigger: '.news-title',
+        start: 'top 90%',
+        toggleActions: 'play none none none',
+      },
+      opacity: 0,
+      y: 20,
+      duration: 0.8,
+      ease: 'power1.out'
+    });
+  }, []);
+
+
   return (
     <><div className="news-container">
       <h2 className="news-title">Last News</h2>

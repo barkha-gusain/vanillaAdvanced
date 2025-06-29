@@ -1,6 +1,9 @@
 import React, { Suspense } from 'react';
 import './index.css';
 import { Element } from 'react-scroll'; // ✅ Add this import
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
+gsap.registerPlugin(ScrollTrigger)
 
 // Lazy-loaded components
 const Navbar = React.lazy(() => import('./Components/Navbar/Navbar.jsx'));

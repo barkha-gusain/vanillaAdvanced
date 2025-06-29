@@ -44,12 +44,9 @@
   border: none;
   border-radius: 40px;
   font-size: 1.25rem;
-  /* font-weight: 600; */
   font-family: 'Poppins', sans-serif;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  /* box-shadow: 0 10px 25px rgba(251, 194, 235, 0.4); */
-  transition: all 0.3s ease;
   cursor: pointer;
 }
 
