@@ -28,7 +28,7 @@ useGSAP(() => {
   const tl = gsap.timeline();
 
   tl.from(".navbar-logo", { y: -50, opacity: 0, duration: 0.5, ease: "power2.out" })
-    .from(".navbar-links li", { y: -20, opacity: 0, stagger: 0.1, duration: 0.4 }, "-=0.3")
+    .from(".navbar-links li", { y: -20, opacity: 0, stagger: 0.3, duration: 0.4 }, "-=0.3")
     .from(".menu-icon", { y: -50, opacity: 0, duration: 0.4 }, "-=0.5");
 }, []);
   
