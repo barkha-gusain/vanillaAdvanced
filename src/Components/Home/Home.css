@@ -1,0 +1,109 @@
+.hero-section {
+  height: 100vh;
+  background: url('/public/van7.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
+  color: white;
+  font-family: 'Dancing Script', cursive;
+
+  position: relative;
+}
+
+.hero-content {
+  margin-left: 2rem;
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+/* Headline */
+.hero-content h1 {
+    font-family: 'Allura', cursive;
+  font-size: clamp(2rem, 6vw, 6rem);
+  font-weight: 300;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+/* Paragraph */
+.hero-content p {
+  font-size: clamp(1rem, 3vw, 2rem);
+   font-family: 'Great Vibes', cursive;
+   color: #c58ee8;
+
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+/* Button */
+.hero-content button {
+  background: #f5eee7;
+  color: #4d2c2c;
+  padding: 0.5rem 3rem;
+  border: none;
+  border-radius: 40px;
+  font-size: 1.25rem;
+  /* font-weight: 600; */
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  /* box-shadow: 0 10px 25px rgba(251, 194, 235, 0.4); */
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hero-content button:hover {
+  background-color: #c06b2f;
+  color: #fff;
+}
+
+
+
+/* Tablet (≤1024px) */
+/* iPad portrait/landscape (768px – 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero-section {
+    padding-left: 5%;
+    padding-right: 5%;
+    background-position: center center;
+  }
+
+  .hero-content {
+    max-width: 700px;      /* allow it to grow wider */
+    margin: 0;             /* remove any auto‑centering */
+    text-align: left;      /* align all text to the left */
+  }
+
+  .hero-content h1 {
+    font-size: clamp(5rem, 10vw, 9rem);   /* larger headline */
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-content p {
+    font-size: clamp(2rem, 5vw, 3.2rem); /* larger subhead */
+    margin-bottom: 2rem;
+  }
+
+  .hero-content button {
+    padding: 0.7rem 3.5rem;               /* bigger tap area */
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  }
+}
+
+
+/* Extra small phones (≤480px) */
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: clamp(1.6rem, 12vw, 3rem);
+  }
+
+  .hero-content p {
+    font-size: clamp(0.85rem, 6vw, 1.3rem);
+  }
+
+  .hero-content button {
+    font-size: clamp(0.9rem, 4vw, 1rem);
+    padding: 0.6rem;
+  }
+}

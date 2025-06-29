@@ -1,0 +1,280 @@
+.vanilla-container {
+  width: 100%;
+  background: #f5eee7;
+  padding: 4rem 1rem;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.vanilla-top {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
+ 
+}
+.vanilla-left{
+    padding-top: 2rem;
+}
+
+.vanilla-left h2 {
+  margin-bottom: 1rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: #5b3926;
+}
+
+.with-love {
+  color: #c9a1e7;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-family: 'Dancing Script', cursive;
+}
+
+.vanilla-right {
+  max-width: 400px;
+  text-align: left;
+  color: #5b3926;
+}
+
+.vanilla-right p {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  line-height: 1.6;
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* center all children */
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 3rem 0;
+}
+
+/* The decorative divider */
+.vanilla-divider {
+  height: 2rem;
+  width: clamp(180px, 35%, 400px);
+  background-image: repeating-linear-gradient(
+    135deg,
+    #c9a1e7,
+    #f6c7de 5px,
+    transparent 5px,
+    transparent 20px
+  );
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+/* ------------ Menu Section ------------ */
+
+.menu-heading {
+  font-size: clamp(1.5rem, 4vw, 1.8rem);
+  color: #111;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.menu-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('/rasturant.jpg') center/cover no-repeat;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  padding: 4rem 1rem;
+}
+
+.menu-child {
+  border-radius: 3rem;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Individual Columns */
+.menu-column {
+  color: #222;
+  flex: 1 1 300px;
+  max-width: 100%;
+  padding: 2rem;
+  border-radius: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* Right border */
+.menu-column.one {
+  position: relative;
+}
+
+.menu-column.one::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 5%;
+  height: 90%;
+  width: 2px;
+  background-color: #d7a9e3;
+}
+
+
+
+.menu-title {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  width: fit-content;
+  color: black;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-left: 0;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: black;
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+.pink-icon {
+  color: #d7a9e3;
+}
+.green-icon {
+  color: #9bf3c8;
+}
+.yellow-icon {
+  color: #f3e59c;
+}
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .vanilla-top {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding-inline: 1rem;
+  }
+
+  .vanilla-left,
+  .vanilla-right {
+    width: 100%;
+    max-width: 600px;
+    padding: 0;
+    text-align: center;
+  }
+
+  .vanilla-left h2,
+  .with-love {
+    font-size: clamp(1.8rem, 5vw, 2.2rem);
+  }
+
+  .vanilla-right p {
+    font-size: clamp(0.95rem, 3vw, 1.1rem);
+    line-height: 1.6;
+  }
+
+  .divider {
+    gap: 0.5rem;
+    margin-block: 2rem;
+  }
+
+  /* Menu section stacks columns vertically */
+  .menu-child {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-inline: 1rem;
+  }
+
+  .menu-column {
+    max-width: 100%;
+  }
+
+  /* turn off the right-border on column.one */
+  .menu-column.one::after {
+    display: none;
+  }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+  .vanilla-container {
+    padding: 2.5rem 0.75rem;
+  }
+
+  .vanilla-top {
+    gap: 1.5rem;
+  }
+
+  .vanilla-left h2,
+  .with-love {
+    font-size: clamp(1.6rem, 6vw, 2rem);
+  }
+
+  .vanilla-right {
+    padding-inline: 0.5rem;
+  }
+
+  .vanilla-right p {
+    font-size: clamp(0.9rem, 4vw, 1rem);
+  }
+
+  .divider {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .vanilla-divider {
+    width: 80%;
+    height: 1.5rem;
+  }
+
+  .menu-heading {
+    font-size: clamp(1.4rem, 5vw, 1.6rem);
+  }
+
+  .menu-container {
+    padding: 3rem 0.5rem;
+  }
+
+  .menu-child {
+    gap: 1rem;
+  }
+
+  .menu-title {
+    font-size: clamp(1.1rem, 4vw, 1.3rem);
+    padding: 0.75rem 1rem;
+  }
+
+  li {
+    font-size: clamp(0.9rem, 3.5vw, 1rem);
+    margin: 1rem 0;
+    gap: 0.75rem;
+  }
+
+  .icon {
+    font-size: 1.3rem;
+  }
+}
